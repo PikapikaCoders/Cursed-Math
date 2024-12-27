@@ -180,22 +180,22 @@ function questionGenerator() {
             correctAnswer = (index1-index2).toString()
             break;
         
+        //case 10:
+            //index1 = randomNumber(10, 19)
+
+            //index2 = randomNumber(0, 8)
+            //if (index2 >= index1) {
+                //index2++
+            //}
+
+            //tmp1 = randomNumber(0, 2)
+            //index3 = randomNumber(1, 9)
+
+            //question = index1+"-"+index2+numberToSign(tmp1)+"<span style='color: red'>"+index3+"</span>"
+            //correctAnswer = numberToArithmetic(tmp1, index1, index3)+"-"+index2
+            //break;
+
         case 10:
-            index1 = randomNumber(10, 19)
-
-            index2 = randomNumber(0, 8)
-            if (index2 >= index1) {
-                index2++
-            }
-
-            tmp1 = randomNumber(0, 2)
-            index3 = randomNumber(1, 9)
-
-            question = index1+"-"+index2+numberToSign(tmp1)+"<span style='color: red'>"+index3+"</span>"
-            correctAnswer = numberToArithmetic(tmp1, index1, index3)+"-"+index2
-            break;
-
-        case 11:
             winState = true
             document.getElementById("question").innerHTML = "You won!"
             document.getElementById("input").value = "You won!";
