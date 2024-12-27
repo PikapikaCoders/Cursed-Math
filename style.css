@@ -5,6 +5,7 @@ h1 {
 p {
     margin-left: 10px;
     margin-bottom: 5px;
+    font-size: 20px;
 }
 input {
     margin-left: 10px;
@@ -14,7 +15,7 @@ input {
 }
 
 div {
-    width: 500px;
+    width: 350px;
     height: 250px;
     border: 3px solid black;
     padding: 10px;

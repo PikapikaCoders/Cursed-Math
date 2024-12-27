@@ -18,7 +18,6 @@ function submitAnswer() {
         }
         questionGenerator()
     }
-    
 }
 
 function randomNumber(min, max) {
@@ -62,6 +61,7 @@ function questionGenerator() {
     let index1 = 0
     let index2 = 0
     let index3 = 0
+    let index4 = 0
 
     if (stageValue >= 3) {
         stageValue = 0
@@ -180,22 +180,140 @@ function questionGenerator() {
             correctAnswer = (index1-index2).toString()
             break;
         
-        //case 10:
-            //index1 = randomNumber(10, 19)
-
-            //index2 = randomNumber(0, 8)
-            //if (index2 >= index1) {
-                //index2++
-            //}
-
-            //tmp1 = randomNumber(0, 2)
-            //index3 = randomNumber(1, 9)
-
-            //question = index1+"-"+index2+numberToSign(tmp1)+"<span style='color: red'>"+index3+"</span>"
-            //correctAnswer = numberToArithmetic(tmp1, index1, index3)+"-"+index2
-            //break;
-
         case 10:
+            index1 = randomNumber(10, 19)
+
+            index2 = randomNumber(0, 8)
+            if (index2 >= index1) {
+                index2++
+            }
+
+            tmp1 = randomNumber(0, 2)
+            index3 = randomNumber(1, 9)
+
+            question = index1+"-"+index2+numberToSign(tmp1)+"<span style='color: red'>"+index3+"</span>"
+            correctAnswer = numberToArithmetic(tmp1, index1, index3)+"-"+index2
+            break;
+
+        case 11:
+            index1 = randomNumber(1, 10)
+
+            index2 = randomNumber(index1+1, 20)
+
+            
+            index3 = randomNumber(100, 99999)
+
+            question = index1+"-<span style='color: red'>"+index2+"</span>+"+index3
+            correctAnswer = index3+(index1-index2).toString()
+            break;
+        
+        case 12:
+            index1 = randomNumber(1, 10)
+
+            index2 = randomNumber(index1+1, 20)
+
+            
+            index3 = randomNumber(1, 9)
+
+            question = index1+"-<span style='color: red'>"+index2+"</span>+"+index3
+            correctAnswer = index3+(index1-index2).toString()
+            break;
+        
+        case 13:
+            index1 = randomNumber(0, 9)
+
+            index2 = randomNumber(0, 8)
+            if (index2 >= index1) {
+                index2++
+            }
+
+            index3 = randomNumber(1, 9)
+
+            question = index1+"-"+index2+"+<span style='color: skyblue'>"+index3+"</span>"
+            correctAnswer = index1+"-"+index2+index3
+            break;
+        
+        case 14:
+            index1 = randomNumber(0, 3)
+
+            index2 = randomNumber(4, 6)
+
+            index3 = randomNumber(7, 9)
+
+            question = index1+"-"+index2+"-"+index3
+            correctAnswer = index1+"-"+index3+"-"+index2
+            break;
+        
+        case 15:
+            index1 = randomNumber(0, 2)
+
+            index2 = randomNumber(3, 4)
+
+            index3 = randomNumber(5, 7)
+
+            index4 = randomNumber(8, 9)
+
+            question = index1+"-"+index2+"-<span style='color: skyblue'>"+index3+"</span>-"+index4
+            correctAnswer = index1+"-"+index4+"-"+index2+"-"+index3
+            break;
+        
+        case 16:
+            index1 = randomNumber(0, 2)
+
+            index2 = randomNumber(3, 4)
+
+            index3 = randomNumber(5, 7)
+
+            index4 = randomNumber(8, 9)
+
+            tmp1 = randomNumber(1, 3)
+            switch (tmp1) {
+                case 1:
+                    correctAnswer = index1+"-"+index4+"-"+index2+"-"+index3
+                    index1 = "<span style='color: red'>"+index1+"</span>"
+                    break;
+                case 2:
+                    correctAnswer = (index1-index2)+"-"+index4+"-"+index3
+                    index2 = "<span style='color: red'>"+index2+"</span>"
+                    break;
+                case 3:
+                    correctAnswer = (index1-index4)+"-"+index2+"-"+index3
+                    index4 = "<span style='color: red'>"+index4+"</span>"
+                    break;
+            }
+            question = index1+"-"+index2+"-<span style='color: skyblue'>"+index3+"</span>-"+index4
+            break;
+        
+        case 17:
+            index1 = randomNumber(0, 5)
+
+            index2 = randomNumber(8, 9)
+
+            index3 = randomNumber(1, 2)
+            if (index3 = 1) {
+                index3 = index1
+            } else {
+                index3 = index2
+            }
+
+            index4 = randomNumber(6, 7)
+
+            tmp1 = randomNumber(1, 2)
+            tmp2 = randomNumber(1, 2)
+            switch (tmp1) {
+                case 1:
+                    correctAnswer = "-"+index4+"-"+index3
+                    index2 = index1
+                    break;
+                case 2:
+                    correctAnswer = "-"+index2+"-"+index3
+                    index4 = index1
+                    break;
+            }
+            question = index1+"-"+index2+"-<span style='color: skyblue'>"+index3+"</span>-"+index4
+            break;
+        
+        case 17:
             winState = true
             document.getElementById("question").innerHTML = "You won!"
             document.getElementById("input").value = "You won!";
@@ -203,11 +321,12 @@ function questionGenerator() {
             break;
         
         default:
-            document.getElementById("output").innerHTML = "[There was an error, please try again]"
+            document.getElementById("output").innerHTML = "[There was an error, please refresh]"
     }
 
     if (!winState) {
         document.getElementById("question").innerHTML = "What is "+question+"?"
         document.getElementById("input").value = "";
+        document.getElementById("stage").innerHTML = "Stage: "+stage+"/16"
     }
 }
