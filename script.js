@@ -314,6 +314,54 @@ function questionGenerator() {
             break;
         
         case 18:
+            index1 = randomNumber(0, 9)
+
+            index2 = randomNumber(0, 8)
+            if (index2 >= index1) {
+                index2++
+            }
+
+            tmp1 = randomNumber(1, 9)
+            tmp2 = randomNumber(1, 9)
+            index3 = "<span style='color: skyblue'>"+tmp1+"</span><span style='color: red'>"+tmp2+"</span>"
+
+            question = index1+"-"+index2+"+"+index3
+            correctAnswer = index1+"-"+(index2+tmp1*10+tmp2)
+            break;
+
+        case 19:
+            index1 = randomNumber(0, 9)
+
+            index2 = randomNumber(0, 8)
+            if (index2 >= index1) {
+                index2++
+            }
+
+            tmp1 = randomNumber(1, 9)
+            tmp2 = randomNumber(1, 9)
+            index3 = tmp1+"<span style='color: skyblue'>"+tmp2+"</span>"
+
+            question = index1+"-"+index2+"+"+index3
+            correctAnswer = "-"+index2+index1+tmp1+tmp2
+            break;
+
+        case 20:
+            index1 = randomNumber(0, 9)
+
+            index2 = randomNumber(0, 8)
+            if (index2 >= index1) {
+                index2++
+            }
+
+            tmp1 = randomNumber(1, 9)
+            tmp2 = randomNumber(1, 9)
+            index3 = "<span style='color: red'>"+tmp1+"</span><span style='color: skyblue'>"+tmp2+"</span>"
+
+            question = index1+"-"+index2+"+"+index3
+            correctAnswer = "-"+index2+(index1+tmp1*10+tmp2)
+            break;
+
+        case 21:
             winState = true
             document.getElementById("question").innerHTML = "You won!"
             document.getElementById("input").value = "You won!";
@@ -327,6 +375,6 @@ function questionGenerator() {
     if (!winState) {
         document.getElementById("question").innerHTML = "What is "+question+"?"
         document.getElementById("input").value = "";
-        document.getElementById("stage").innerHTML = "Stage: "+stage+"/17"
+        document.getElementById("stage").innerHTML = "Stage: "+stage+"/20"
     }
 }
