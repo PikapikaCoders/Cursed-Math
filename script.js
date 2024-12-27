@@ -273,7 +273,7 @@ function questionGenerator() {
                     index1 = "<span style='color: red'>"+index1+"</span>"
                     break;
                 case 2:
-                    correctAnswer = (index1-index2)+"-"+index4+"-"+index3
+                    correctAnswer = "-"+index4+(index1-index2)+"-"+index3
                     index2 = "<span style='color: red'>"+index2+"</span>"
                     break;
                 case 3:
@@ -313,7 +313,7 @@ function questionGenerator() {
             question = index1+"-"+index2+"-<span style='color: skyblue'>"+index3+"</span>-"+index4
             break;
         
-        case 17:
+        case 18:
             winState = true
             document.getElementById("question").innerHTML = "You won!"
             document.getElementById("input").value = "You won!";
@@ -327,6 +327,6 @@ function questionGenerator() {
     if (!winState) {
         document.getElementById("question").innerHTML = "What is "+question+"?"
         document.getElementById("input").value = "";
-        document.getElementById("stage").innerHTML = "Stage: "+stage+"/16"
+        document.getElementById("stage").innerHTML = "Stage: "+stage+"/17"
     }
 }
