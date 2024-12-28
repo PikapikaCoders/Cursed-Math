@@ -137,6 +137,16 @@ function questionGenerator() {
         case 6:
             index1 = randomNumber(0, 9)
 
+            index2 = index1
+
+            question = index1+"-"+index2
+            correctAnswer = ""
+            break;
+        
+
+        case 7:
+            index1 = randomNumber(0, 9)
+
             index2 = randomNumber(0, 8)
             if (index2 >= index1) {
                 index2++
@@ -146,7 +156,7 @@ function questionGenerator() {
             correctAnswer = index1+"-"+index2
             break;
         
-        case 7:
+        case 8:
             index1 = randomNumber(0, 9)
 
             index2 = randomNumber(0, 8)
@@ -162,7 +172,7 @@ function questionGenerator() {
             correctAnswer = index1+index3+"-"+index2
             break;
         
-        case 8:
+        case 9:
             index1 = randomNumber(0, 9)
 
             index2 = randomNumber(0, 9)
@@ -171,7 +181,7 @@ function questionGenerator() {
             correctAnswer = (index1+index2).toString()
             break;
         
-        case 9:
+        case 10:
             index1 = randomNumber(10, 50)
 
             index2 = randomNumber(0, 9)
@@ -180,7 +190,7 @@ function questionGenerator() {
             correctAnswer = (index1-index2).toString()
             break;
         
-        case 10:
+        case 11:
             index1 = randomNumber(10, 19)
 
             index2 = randomNumber(0, 8)
@@ -195,18 +205,6 @@ function questionGenerator() {
             correctAnswer = numberToArithmetic(tmp1, index1, index3)+"-"+index2
             break;
 
-        case 11:
-            index1 = randomNumber(1, 10)
-
-            index2 = randomNumber(index1+1, 20)
-
-            
-            index3 = randomNumber(100, 99999)
-
-            question = index1+"-<span style='color: red'>"+index2+"</span>+"+index3
-            correctAnswer = index3+(index1-index2).toString()
-            break;
-        
         case 12:
             index1 = randomNumber(1, 10)
 
